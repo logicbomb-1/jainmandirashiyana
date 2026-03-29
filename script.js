@@ -99,7 +99,16 @@ if (heroAurora && hero) {
   });
 }
 
-// ===== 3D TILT EFFECT =====
+// ===== DEITY CARDS: TAP TO FLIP ON TOUCH DEVICES =====
+if (window.matchMedia('(hover: none)').matches) {
+  document.querySelectorAll('.deity-card-3d').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+  });
+}
+
+// ===== 3D TILT EFFECT (desktop only) =====
 document.querySelectorAll('.tilt-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
@@ -112,7 +121,8 @@ document.querySelectorAll('.tilt-card').forEach(card => {
   });
 });
 
-// ===== MAGNETIC BUTTONS =====
+// ===== MAGNETIC BUTTONS (desktop only) =====
+if (window.matchMedia('(hover: hover)').matches)
 document.querySelectorAll('.hero-cta .btn, .btn-form, .map-cta .btn').forEach(btn => {
   btn.addEventListener('mousemove', e => {
     const rect = btn.getBoundingClientRect();
