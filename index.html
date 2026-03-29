@@ -11,10 +11,25 @@
 <title>श्री 1008 भगवान महावीर दिगम्बर जैन मंदिर | आशियाना, लखनऊ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="preloader-mandala">
+    <img src="dharma.png" alt="Jain Dharma" style="width:100%;height:100%;object-fit:contain;">
+  </div>
+  <div class="preloader-bar"><div class="preloader-bar-fill"></div></div>
+</div>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursor-dot"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
 
 <!-- ===== FLOATING PILL NAVBAR ===== -->
 <nav id="navbar" role="navigation" aria-label="मुख्य नेविगेशन">
@@ -46,11 +61,20 @@
 =========================== -->
 <section id="hero" aria-labelledby="hero-title">
   <div class="hero-mandala" aria-hidden="true"></div>
+  <div class="hero-aurora" id="hero-aurora" aria-hidden="true"></div>
+  <div class="hero-noise" aria-hidden="true"></div>
+  <div class="hero-rings" aria-hidden="true">
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+  </div>
   <div class="hero-particles" aria-hidden="true"></div>
   <div class="hero-float-decor" aria-hidden="true"></div>
   <div class="hero-content">
+    <p class="hero-eyebrow">आशियाना, लखनऊ · स्थापित 1978</p>
     <div class="hero-om" aria-label="ॐ प्रतीक">ॐ</div>
-    <h1 class="hero-title" id="hero-title">श्री 1008 भगवान महावीर<br>दिगम्बर जैन मंदिर</h1>
+    <h1 class="hero-title" id="hero-title"><strong>श्री 1008 भगवान महावीर</strong><br><span>दिगम्बर जैन मंदिर</span></h1>
     <p class="hero-tagline" lang="hi">जियो और जीने दो</p>
     <p class="hero-tagline-en">अहिंसा परमो धर्मः</p>
     <p class="hero-welcome">
@@ -381,36 +405,51 @@
     </div>
 
     <h3 class="mgmt-section-title">कार्यकारिणी समिति</h3>
+
+    <!-- Group photo of current कार्यकारिणी समिति -->
+    <div class="fade-in" style="margin-bottom:2.5rem;">
+      <img src="kariya.jpeg"
+           alt="कार्यकारिणी समिति — श्री 1008 भगवान महावीर दिगम्बर जैन मंदिर, आशियाना, लखनऊ"
+           style="width:100%;max-width:700px;display:block;margin:0 auto;border-radius:20px;box-shadow:0 16px 60px rgba(44,36,22,0.2);object-fit:cover;">
+      <p style="text-align:center;font-size:0.82rem;color:var(--stone);margin-top:0.8rem;font-style:italic;">वर्तमान कार्यकारिणी समिति — श्री 1008 भगवान महावीर दिगम्बर जैन मंदिर</p>
+    </div>
+
     <div class="mgmt-grid">
       <div class="mgmt-card tilt-card fade-in">
-        <div class="mgmt-avatar" aria-hidden="true">S</div>
+        <div class="mgmt-avatar" aria-hidden="true">च</div>
         <div class="mgmt-role">अध्यक्ष</div>
-        <h4>Shri Suresh Kumar Jain</h4>
-        <p>2010 से मंदिर सेवा में समर्पित</p>
+        <h4>श्री चंद्र प्रकाश जैन</h4>
+        <p>नवनिर्वाचित अध्यक्ष — धर्म और सेवा के मार्ग पर समर्पित</p>
       </div>
-      <div class="mgmt-card fade-in fade-in-delay-1">
-        <div class="mgmt-avatar" aria-hidden="true">P</div>
-        <div class="mgmt-role">उपाध्यक्ष</div>
-        <h4>Shri Prakash Chand Jain</h4>
+      <div class="mgmt-card tilt-card fade-in fade-in-delay-1">
+        <div class="mgmt-avatar" aria-hidden="true">म</div>
+        <div class="mgmt-role">वरिष्ठ उपाध्यक्ष</div>
+        <h4>श्री मनोज कुमार जैन</h4>
         <p>समाजसेवी एवं परोपकारी</p>
       </div>
-      <div class="mgmt-card fade-in fade-in-delay-2">
-        <div class="mgmt-avatar" aria-hidden="true">R</div>
-        <div class="mgmt-role">मंत्री</div>
-        <h4>Shri Rajesh Kumar Mehta</h4>
-        <p>2015 से प्रशासनिक प्रमुख</p>
+      <div class="mgmt-card tilt-card fade-in fade-in-delay-2">
+        <div class="mgmt-avatar" aria-hidden="true">अ</div>
+        <div class="mgmt-role">उपाध्यक्ष</div>
+        <h4>श्री अखिलेश जैन</h4>
+        <p>मंदिर विकास एवं सामुदायिक सेवा</p>
       </div>
-      <div class="mgmt-card fade-in fade-in-delay-3">
-        <div class="mgmt-avatar" aria-hidden="true">V</div>
-        <div class="mgmt-role">संयुक्त मंत्री</div>
-        <h4>Smt. Veena Devi Jain</h4>
-        <p>सेवा कार्यक्रमों का समन्वय</p>
+      <div class="mgmt-card tilt-card fade-in fade-in-delay-3">
+        <div class="mgmt-avatar" aria-hidden="true">अ</div>
+        <div class="mgmt-role">मंत्री</div>
+        <h4>श्री अजय जैन</h4>
+        <p>प्रशासनिक समन्वय एवं संगठन</p>
       </div>
       <div class="mgmt-card tilt-card fade-in">
-        <div class="mgmt-avatar" aria-hidden="true">A</div>
+        <div class="mgmt-avatar" aria-hidden="true">श</div>
         <div class="mgmt-role">कोषाध्यक्ष</div>
-        <h4>Shri Anil Kumar Patni</h4>
-        <p>चार्टर्ड एकाउंटेंट एवं न्यासी</p>
+        <h4>श्री शरद कुमार जैन</h4>
+        <p>वित्तीय प्रबंधन एवं पारदर्शिता</p>
+      </div>
+      <div class="mgmt-card tilt-card fade-in fade-in-delay-1">
+        <div class="mgmt-avatar" aria-hidden="true">अ</div>
+        <div class="mgmt-role">संयुक्त मंत्री</div>
+        <h4>श्री अनुप जैन</h4>
+        <p>सेवा कार्यक्रमों का समन्वय</p>
       </div>
     </div>
 
@@ -627,51 +666,51 @@
     </div>
     <div class="gallery-grid fade-in" role="list" aria-label="मंदिर फोटो गैलरी">
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('photo2.png')" role="img" aria-label="मंदिर का रात्रिकालीन बाह्य दृश्य — प्रकाशित संकेत-फलक"></div>
+        <div class="gallery-tile" style="background-image:url('photo2.png')" data-lb-src="photo2.png" data-lb-caption="मंदिर — रात्रिकालीन दृश्य" role="img" aria-label="मंदिर का रात्रिकालीन बाह्य दृश्य — प्रकाशित संकेत-फलक"></div>
         <div class="gallery-overlay"><span>मंदिर — रात्रिकालीन दृश्य</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0014.jpg')" role="img" aria-label="गर्भगृह में अभिषेक पूजा"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0014.jpg')" data-lb-src="IMG-20260314-WA0014.jpg" data-lb-caption="अभिषेक पूजा" role="img" aria-label="गर्भगृह में अभिषेक पूजा"></div>
         <div class="gallery-overlay"><span>अभिषेक पूजा</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0025.jpg')" role="img" aria-label="मूर्ति प्रतिष्ठा समारोह"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0025.jpg')" data-lb-src="IMG-20260314-WA0025.jpg" data-lb-caption="मूर्ति प्रतिष्ठा समारोह" role="img" aria-label="मूर्ति प्रतिष्ठा समारोह"></div>
         <div class="gallery-overlay"><span>मूर्ति प्रतिष्ठा</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0013.jpg')" role="img" aria-label="भूमि पूजा नींव स्थापना समारोह"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0013.jpg')" data-lb-src="IMG-20260314-WA0013.jpg" data-lb-caption="भूमि पूजा — नींव स्थापना" role="img" aria-label="भूमि पूजा नींव स्थापना समारोह"></div>
         <div class="gallery-overlay"><span>भूमि पूजा</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0011.jpg')" role="img" aria-label="केसरिया वस्त्रधारी मुनियों की शोभायात्रा"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0011.jpg')" data-lb-src="IMG-20260314-WA0011.jpg" data-lb-caption="मुनि शोभायात्रा" role="img" aria-label="केसरिया वस्त्रधारी मुनियों की शोभायात्रा"></div>
         <div class="gallery-overlay"><span>मुनि शोभायात्रा</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0008.jpg')" role="img" aria-label="सामुदायिक आरती उत्सव"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0008.jpg')" data-lb-src="IMG-20260314-WA0008.jpg" data-lb-caption="सामुदायिक आरती उत्सव" role="img" aria-label="सामुदायिक आरती उत्सव"></div>
         <div class="gallery-overlay"><span>सामुदायिक आरती</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0009.jpg')" role="img" aria-label="सांगमोपकरण सम्मान समारोह"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0009.jpg')" data-lb-src="IMG-20260314-WA0009.jpg" data-lb-caption="सम्मान समारोह" role="img" aria-label="सांगमोपकरण सम्मान समारोह"></div>
         <div class="gallery-overlay"><span>सम्मान समारोह</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0010.jpg')" role="img" aria-label="सामुदायिक पुरस्कार समारोह"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0010.jpg')" data-lb-src="IMG-20260314-WA0010.jpg" data-lb-caption="पुरस्कार समारोह" role="img" aria-label="सामुदायिक पुरस्कार समारोह"></div>
         <div class="gallery-overlay"><span>पुरस्कार समारोह</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('photo3.png')" role="img" aria-label="मुख्य गर्भगृह — भगवान महावीर की श्वेत संगमरमर प्रतिमा"></div>
+        <div class="gallery-tile" style="background-image:url('photo3.png')" data-lb-src="photo3.png" data-lb-caption="मुख्य गर्भगृह — भगवान महावीर" role="img" aria-label="मुख्य गर्भगृह — भगवान महावीर की श्वेत संगमरमर प्रतिमा"></div>
         <div class="gallery-overlay"><span>मुख्य गर्भगृह</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0019.jpg')" role="img" aria-label="मंदिर में गणतंत्र दिवस समारोह"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0019.jpg')" data-lb-src="IMG-20260314-WA0019.jpg" data-lb-caption="गणतंत्र दिवस समारोह" role="img" aria-label="मंदिर में गणतंत्र दिवस समारोह"></div>
         <div class="gallery-overlay"><span>गणतंत्र दिवस</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('photo5.png')" role="img" aria-label="मंदिर का संध्याकालीन बाह्य दृश्य — आशियाना, लखनऊ"></div>
+        <div class="gallery-tile" style="background-image:url('photo5.png')" data-lb-src="photo5.png" data-lb-caption="मंदिर — संध्याकालीन दृश्य" role="img" aria-label="मंदिर का संध्याकालीन बाह्य दृश्य — आशियाना, लखनऊ"></div>
         <div class="gallery-overlay"><span>मंदिर — संध्याकालीन दृश्य</span></div>
       </div>
       <div class="gallery-item" role="listitem">
-        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0023.jpg')" role="img" aria-label="मंदिर में पर्वोत्सव"></div>
+        <div class="gallery-tile" style="background-image:url('IMG-20260314-WA0023.jpg')" data-lb-src="IMG-20260314-WA0023.jpg" data-lb-caption="पर्वोत्सव" role="img" aria-label="मंदिर में पर्वोत्सव"></div>
         <div class="gallery-overlay"><span>पर्वोत्सव</span></div>
       </div>
     </div>
@@ -679,7 +718,7 @@
     <!-- Press / Media Coverage -->
     <div class="section-header fade-in" style="margin-top:3rem;">
       <span class="section-tag">मीडिया कवरेज</span>
-      <h3 style="font-family:'Playfair Display',serif;color:var(--maroon);font-size:1.6rem;">समाचार पत्रों में मंदिर</h3>
+      <h3 style="font-family:'Playfair Display',serif;color:var(--gold-bright);font-size:1.6rem;">समाचार पत्रों में मंदिर</h3>
       <p class="subtitle">लखनऊ के प्रमुख समाचार पत्रों में प्रकाशित</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;" class="fade-in">
@@ -741,8 +780,7 @@
             <div class="contact-item-text">
               <h4>दूरभाष संख्या</h4>
               <p>
-                <a href="tel:+911234567890" style="color:var(--saffron);">+91 12345 67890</a> (मंदिर कार्यालय)<br>
-                <a href="tel:+911234567891" style="color:var(--saffron);">+91 12345 67891</a> (धर्मशाला बुकिंग)
+                <a href="tel:+919415464894" style="color:var(--saffron);">+91 94154 64894</a> (मंदिर कार्यालय / धर्मशाला बुकिंग)
               </p>
             </div>
           </div>
@@ -776,17 +814,13 @@
 
       <!-- Right: tabbed forms -->
       <div class="fade-in fade-in-delay-1">
-        <div class="contact-form-wrap" style="overflow:hidden;">
+        <div class="contact-form-wrap">
           <!-- Tab buttons -->
-          <div style="display:flex;border-bottom:2px solid var(--beige);">
-            <button id="tab-contact" onclick="showTab('contact')"
-              style="flex:1;padding:1rem;font-size:1rem;font-weight:700;font-family:'Lato',sans-serif;
-                     background:var(--maroon);color:#fff;border:none;cursor:pointer;transition:background 0.2s;">
+          <div class="tab-btn-row">
+            <button id="tab-contact" class="tab-btn active" onclick="showTab('contact')">
               ✉ संदेश भेजें
             </button>
-            <button id="tab-dharamshala" onclick="showTab('dharamshala')"
-              style="flex:1;padding:1rem;font-size:1rem;font-weight:700;font-family:'Lato',sans-serif;
-                     background:var(--offwhite);color:var(--maroon);border:none;cursor:pointer;transition:background 0.2s;">
+            <button id="tab-dharamshala" class="tab-btn" onclick="showTab('dharamshala')">
               🏨 धर्मशाला बुकिंग
             </button>
           </div>
@@ -795,90 +829,33 @@
           <div id="panel-contact" style="padding:2rem 1.8rem;">
             <form id="contact-form" novalidate aria-label="संपर्क फॉर्म">
               <div class="form-group">
-                <label for="c-name">आपका नाम *</label>
-                <input type="text" id="c-name" name="name" placeholder="अपना पूरा नाम लिखें" required aria-required="true">
+                <label for="c-phone">आपका फ़ोन नंबर *</label>
+                <input type="tel" id="c-phone" name="phone" placeholder="+91 98765 43210" required aria-required="true">
               </div>
               <div class="form-group">
-                <label for="c-email">ईमेल पता *</label>
-                <input type="email" id="c-email" name="email" placeholder="your@email.com" required aria-required="true">
+                <label for="c-message">संदेश *</label>
+                <textarea id="c-message" name="message" placeholder="यहाँ अपना संदेश लिखें..." required aria-required="true" style="min-height:130px;"></textarea>
               </div>
-              <div class="form-group">
-                <label for="c-phone">दूरभाष संख्या</label>
-                <input type="tel" id="c-phone" name="phone" placeholder="+91 98765 43210">
-              </div>
-              <div class="form-group">
-                <label for="c-subject">विषय</label>
-                <select id="c-subject" name="subject">
-                  <option value="">विषय चुनें</option>
-                  <option value="general">सामान्य जानकारी</option>
-                  <option value="seva">सेवा / दान</option>
-                  <option value="events">आयोजन एवं पर्व</option>
-                  <option value="pravachan">प्रवचन आमंत्रण</option>
-                  <option value="other">अन्य</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="c-message">आपका संदेश *</label>
-                <textarea id="c-message" name="message" placeholder="यहाँ अपना संदेश लिखें..." required aria-required="true" style="min-height:110px;"></textarea>
-              </div>
-              <button type="submit" class="btn-form">🙏 संदेश भेजें</button>
+              <button type="submit" class="btn-form">🟢 WhatsApp पर भेजें</button>
             </form>
           </div>
 
           <!-- Dharamshala booking tab -->
           <div id="panel-dharamshala" style="padding:2rem 1.8rem;display:none;">
-            <p style="font-size:0.88rem;color:var(--stone);margin-bottom:1.2rem;text-align:center;font-style:italic;">
+            <p style="font-size:0.85rem;color:var(--stone);margin-bottom:1.4rem;text-align:center;font-style:italic;">
               ⚠ शुद्ध शाकाहारी परिसर · मद्य व तंबाकू वर्जित · आगमन: 12:00 · प्रस्थान: 11:00
             </p>
-            <form class="booking-form" id="booking-form" novalidate aria-label="धर्मशाला बुकिंग फॉर्म" style="background:none;box-shadow:none;border:none;padding:0;">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="b-name">पूरा नाम *</label>
-                  <input type="text" id="b-name" name="name" placeholder="श्री / श्रीमती अपना नाम" required aria-required="true">
-                </div>
-                <div class="form-group">
-                  <label for="b-phone">फ़ोन *</label>
-                  <input type="tel" id="b-phone" name="phone" placeholder="+91 98765 43210" required aria-required="true">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="b-checkin">आगमन तिथि *</label>
-                  <input type="date" id="b-checkin" name="checkin" required aria-required="true">
-                </div>
-                <div class="form-group">
-                  <label for="b-checkout">प्रस्थान तिथि *</label>
-                  <input type="date" id="b-checkout" name="checkout" required aria-required="true">
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="b-room">कक्ष प्रकार *</label>
-                  <select id="b-room" name="room" required aria-required="true">
-                    <option value="">चुनें</option>
-                    <option value="standard">सामान्य कक्ष</option>
-                    <option value="family">पारिवारिक कक्ष</option>
-                    <option value="dormitory">यात्री छात्रावास</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="b-guests">यात्री *</label>
-                  <select id="b-guests" name="guests" required aria-required="true">
-                    <option value="">चुनें</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5+">5+</option>
-                  </select>
-                </div>
+            <form id="booking-form" novalidate aria-label="धर्मशाला बुकिंग फॉर्म">
+              <div class="form-group">
+                <label for="b-phone">आपका फ़ोन नंबर *</label>
+                <input type="tel" id="b-phone" name="phone" placeholder="+91 98765 43210" required aria-required="true">
               </div>
               <div class="form-group">
-                <label for="b-notes">विशेष जानकारी</label>
-                <textarea id="b-notes" name="notes" placeholder="विशेष आवश्यकताएँ या यात्रा का प्रयोजन..."></textarea>
+                <label for="b-notes">बुकिंग विवरण *</label>
+                <textarea id="b-notes" name="notes" placeholder="आगमन तिथि, प्रस्थान तिथि, यात्रियों की संख्या, कक्ष प्रकार..." required aria-required="true" style="min-height:130px;"></textarea>
               </div>
-              <button type="submit" class="btn-form">🙏 बुकिंग अनुरोध भेजें</button>
-              <p style="font-size:0.78rem;color:var(--stone);margin-top:0.7rem;text-align:center;">पुष्टि 24 घंटे में फ़ोन या ईमेल द्वारा की जाएगी।</p>
+              <button type="submit" class="btn-form">🟢 WhatsApp पर भेजें</button>
+              <p style="font-size:0.78rem;color:var(--stone);margin-top:0.7rem;text-align:center;">पुष्टि 24 घंटे में फ़ोन द्वारा की जाएगी।</p>
             </form>
           </div>
 
@@ -901,7 +878,7 @@
       <h2 id="map-title">हमारा स्थान</h2>
       <p class="subtitle">LDA Colony, Sector K, Ashiyana, Lucknow — 226012</p>
     </div>
-    <div class="fade-in" style="border-radius:12px;overflow:hidden;box-shadow:0 6px 24px var(--shadow-deep);border:2px solid var(--beige);">
+    <div class="map-frame-wrap fade-in">
       <iframe
         src="https://maps.google.com/maps?q=Shree+1008+Bhagwan+Mahaveer+Digamber+Jain+Mandir,+LDA+Colony,+Kanpur+Rd,+Sector+K,+Ashiyana,+Lucknow,+Uttar+Pradesh+226012&output=embed"
         width="100%" height="420" style="display:block;border:0;"
@@ -963,7 +940,7 @@
       <h4>संपर्क</h4>
       <ul>
         <li><a href="#contact">संदेश भेजें</a></li>
-        <li><a href="tel:+911234567890">+91 12345 67890</a></li>
+        <li><a href="tel:+919415464894">+91 94154 64894</a></li>
         <li><a href="mailto:info@digambarjainmandir.org">ईमेल करें</a></li>
         <li><a href="#map-section">मानचित्र पर खोजें</a></li>
       </ul>
@@ -975,8 +952,19 @@
   </div>
 </footer>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="फोटो व्यूअर">
+  <button class="lightbox-close" id="lb-close" aria-label="बंद करें">✕</button>
+  <div class="lightbox-img-wrap">
+    <img id="lb-img" src="" alt="">
+    <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="पिछली">&#8249;</button>
+    <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="अगली">&#8250;</button>
+    <p class="lightbox-caption" id="lb-caption"></p>
+  </div>
+</div>
+
 <!-- BACK TO TOP BUTTON -->
-<button id="back-to-top" aria-label="ऊपर जाएँ" title="ऊपर जाएँ">▲</button>
+<button id="back-to-top" aria-label="ऊपर जाएँ" title="ऊपर जाएँ">↑</button>
 
 <script src="script.js"></script>
 </body>
