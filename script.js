@@ -1,3 +1,40 @@
+// ===== 3D TILT EFFECT ON CARDS =====
+document.querySelectorAll('.tilt-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(1000px) rotateY(${x * 15}deg) rotateX(${-y * 15}deg) translateZ(10px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateY(0) rotateX(0) translateZ(0)';
+  });
+});
+
+// ===== ANIMATED STAT COUNTERS =====
+function animateCounter(el) {
+  const target = parseInt(el.dataset.target);
+  let current = 0;
+  const step = Math.max(1, Math.ceil(target / 60));
+  const timer = setInterval(() => {
+    current = Math.min(current + step, target);
+    el.textContent = current.toLocaleString('en-IN');
+    if (current >= target) clearInterval(timer);
+  }, 30);
+}
+const statsSection = document.getElementById('stats');
+if (statsSection) {
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        document.querySelectorAll('.stat-num').forEach(el => animateCounter(el));
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  statsObserver.observe(statsSection);
+}
+
 // ===== TAB SWITCHER (Contact / Dharamshala) =====
 function showTab(tab) {
   document.getElementById('panel-contact').style.display = tab === 'contact' ? 'block' : 'none';
@@ -120,13 +157,13 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   }, 5000);
 });
 
-// ===== NAVBAR SCROLL SHADOW =====
+// ===== NAVBAR SCROLL SHADOW + SCROLLED CLASS =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    navbar.style.boxShadow = '0 4px 24px rgba(44,36,22,0.18)';
+  if (window.scrollY > 60) {
+    navbar.classList.add('scrolled');
   } else {
-    navbar.style.boxShadow = '0 2px 16px rgba(44,36,22,0.12)';
+    navbar.classList.remove('scrolled');
   }
 }, { passive: true });
 

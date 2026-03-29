@@ -16,7 +16,7 @@
 </head>
 <body>
 
-<!-- ===== STICKY NAVBAR ===== -->
+<!-- ===== FLOATING PILL NAVBAR ===== -->
 <nav id="navbar" role="navigation" aria-label="मुख्य नेविगेशन">
   <div class="nav-inner">
     <a href="#hero" class="nav-brand" aria-label="दिगम्बर जैन मंदिर — मुख्य पृष्ठ">
@@ -46,6 +46,8 @@
 =========================== -->
 <section id="hero" aria-labelledby="hero-title">
   <div class="hero-mandala" aria-hidden="true"></div>
+  <div class="hero-particles" aria-hidden="true"></div>
+  <div class="hero-float-decor" aria-hidden="true"></div>
   <div class="hero-content">
     <div class="hero-om" aria-label="ॐ प्रतीक">ॐ</div>
     <h1 class="hero-title" id="hero-title">श्री 1008 भगवान महावीर<br>दिगम्बर जैन मंदिर</h1>
@@ -70,6 +72,30 @@
   </div>
 </section>
 
+<!-- ===========================
+     STATS COUNTER SECTION
+=========================== -->
+<section id="stats" class="stats-section" aria-label="मंदिर आँकड़े">
+  <div class="stats-grid">
+    <div class="stat-item fade-in">
+      <span class="stat-num" data-target="45">0</span><span>+</span>
+      <p>वर्षों की सेवा</p>
+    </div>
+    <div class="stat-item fade-in fade-in-delay-1">
+      <span class="stat-num" data-target="5000">0</span><span>+</span>
+      <p>ग्रंथ पुस्तकालय में</p>
+    </div>
+    <div class="stat-item fade-in fade-in-delay-2">
+      <span class="stat-num" data-target="40">0</span><span>+</span>
+      <p>धर्मशाला कक्ष</p>
+    </div>
+    <div class="stat-item fade-in fade-in-delay-3">
+      <span class="stat-num" data-target="365">0</span>
+      <p>दिन खुला रहता है</p>
+    </div>
+  </div>
+</section>
+
 <!-- MANDALA DIVIDER -->
 <div class="mandala-divider" aria-hidden="true"><div class="mandala-icon"></div></div>
 
@@ -79,7 +105,7 @@
 <section id="about" aria-labelledby="about-title">
   <div class="container">
     <div class="about-grid">
-      <div class="about-visual fade-in">
+      <div class="about-visual fade-in tilt-card">
         <img src="photo4.png"
              alt="श्री 1008 भगवान महावीर दिगम्बर जैन मंदिर, आशियाना, लखनऊ — मंदिर का बाह्य दृश्य"
              style="width:100%;border-radius:14px;box-shadow:0 8px 32px rgba(44,36,22,0.18);object-fit:cover;max-height:420px;">
@@ -105,19 +131,19 @@
           (सत्य की बहुआयामिता) और <em>अपरिग्रह</em> (अनासक्ति) के मार्ग पर चलना चाहते हैं।
         </p>
         <div class="about-pillars">
-          <div class="pillar-card">
+          <div class="pillar-card tilt-card">
             <h4>अहिंसा</h4>
             <p>विचार, वाणी और कर्म में अहिंसा — यही परम धर्म है।</p>
           </div>
-          <div class="pillar-card">
+          <div class="pillar-card tilt-card">
             <h4>अनेकान्तवाद</h4>
             <p>सत्य की बहुआयामिता — सहिष्णुता और विचारों की उदारता।</p>
           </div>
-          <div class="pillar-card">
+          <div class="pillar-card tilt-card">
             <h4>अपरिग्रह</h4>
             <p>अनासक्ति — सांसारिक वस्तुओं के आसक्ति से मुक्ति।</p>
           </div>
-          <div class="pillar-card">
+          <div class="pillar-card tilt-card">
             <h4>सत्य</h4>
             <p>जीवन के प्रत्येक पहलू में सत्यनिष्ठा — मुक्ति का मार्ग।</p>
           </div>
@@ -195,42 +221,95 @@
       <p class="subtitle">24 तीर्थंकर — जिन्होंने सांसारिक सागर को पार कर मोक्ष का मार्ग प्रशस्त किया</p>
     </div>
     <div class="deities-grid">
-      <div class="deity-card fade-in">
-        <div class="deity-figure mahavir" role="img" aria-label="भगवान महावीर स्वामी की प्रतिमा">
-          <img src="photo1.png" alt="भगवान महावीर स्वामी — श्वेत संगमरमर प्रतिमा, स्वर्णिम सिंहासन" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+
+      <!-- Bhagwan Mahavir — 3D flip card -->
+      <div class="deity-card-3d fade-in">
+        <div class="deity-card-inner">
+          <div class="deity-card-front">
+            <div class="deity-figure mahavir" role="img" aria-label="भगवान महावीर स्वामी की प्रतिमा">
+              <img src="photo1.png" alt="भगवान महावीर स्वामी — श्वेत संगमरमर प्रतिमा, स्वर्णिम सिंहासन" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+            </div>
+            <span class="deity-num">24वें तीर्थंकर</span>
+            <h3>Bhagwan Mahavir Swami</h3>
+            <div class="deity-hindi">भगवान महावीर स्वामी</div>
+            <p>इस कालचक्र के अंतिम तीर्थंकर, महावीर स्वामी ने अशोक वृक्ष के नीचे केवलज्ञान प्राप्त किया।</p>
+            <p class="deity-flip-hint">↻ कार्ड पलटें</p>
+          </div>
+          <div class="deity-card-back">
+            <div class="deity-back-icon">🌟</div>
+            <h3>Bhagwan Mahavir Swami</h3>
+            <div class="deity-hindi-back">अहिंसा परमो धर्मः</div>
+            <p>अहिंसा, सत्य और अपरिग्रह की शिक्षाएँ जैन दर्शन की आधारशिला हैं। महावीर जयंती उनके दिव्य जन्म का उत्सव मनाती है। उन्होंने 12 वर्षों की कठोर तपस्या के बाद केवलज्ञान प्राप्त किया और 72 वर्षों तक अपना जीवन जिया।</p>
+          </div>
         </div>
-        <span class="deity-num">24वें तीर्थंकर</span>
-        <h3>Bhagwan Mahavir Swami</h3>
-        <div class="deity-hindi">भगवान महावीर स्वामी</div>
-        <p>इस कालचक्र के अंतिम तीर्थंकर, महावीर स्वामी ने अशोक वृक्ष के नीचे केवलज्ञान प्राप्त किया। उनकी अहिंसा, सत्य और अपरिग्रह की शिक्षाएँ जैन दर्शन की आधारशिला हैं। महावीर जयंती उनके दिव्य जन्म का उत्सव मनाती है।</p>
       </div>
-      <div class="deity-card fade-in fade-in-delay-1">
-        <div class="deity-figure adinath" role="img" aria-label="भगवान आदिनाथ की देव-आकृति">
-          <div class="deity-figure-inner">☸</div>
+
+      <!-- Bhagwan Adinath — 3D flip card -->
+      <div class="deity-card-3d fade-in fade-in-delay-1">
+        <div class="deity-card-inner">
+          <div class="deity-card-front">
+            <div class="deity-figure adinath" role="img" aria-label="भगवान आदिनाथ की देव-आकृति">
+              <div class="deity-figure-inner">☸</div>
+            </div>
+            <span class="deity-num">1ले तीर्थंकर</span>
+            <h3>Bhagwan Adinath</h3>
+            <div class="deity-hindi">भगवान आदिनाथ (ऋषभनाथ)</div>
+            <p>ऋषभनाथ, प्रथम तीर्थंकर, जैन मार्ग के प्रवर्तक के रूप में पूजनीय हैं।</p>
+            <p class="deity-flip-hint">↻ कार्ड पलटें</p>
+          </div>
+          <div class="deity-card-back">
+            <div class="deity-back-icon">☸</div>
+            <h3>Bhagwan Adinath</h3>
+            <div class="deity-hindi-back">प्रथम तीर्थंकर</div>
+            <p>उन्होंने मुनि, आर्यिका, श्रावक और श्राविका — इस चतुर्विध संघ की स्थापना की। मानवता को सभ्यता की कलाएँ और आध्यात्मिक मुक्ति का मार्ग सिखाया। उनका प्रतीक वृषभ (बैल) है।</p>
+          </div>
         </div>
-        <span class="deity-num">1ले तीर्थंकर</span>
-        <h3>Bhagwan Adinath</h3>
-        <div class="deity-hindi">भगवान आदिनाथ (ऋषभनाथ)</div>
-        <p>ऋषभनाथ, प्रथम तीर्थंकर, जैन मार्ग के प्रवर्तक के रूप में पूजनीय हैं। उन्होंने मुनि, आर्यिका, श्रावक और श्राविका — इस चतुर्विध संघ की स्थापना की और मानवता को सभ्यता की कलाएँ और आध्यात्मिक मुक्ति का मार्ग सिखाया।</p>
       </div>
-      <div class="deity-card fade-in fade-in-delay-2">
-        <div class="deity-figure parshvanath" role="img" aria-label="भगवान पार्श्वनाथ की देव-आकृति">
-          <div class="deity-figure-inner">🐍</div>
+
+      <!-- Bhagwan Parshvanath — 3D flip card -->
+      <div class="deity-card-3d fade-in fade-in-delay-2">
+        <div class="deity-card-inner">
+          <div class="deity-card-front">
+            <div class="deity-figure parshvanath" role="img" aria-label="भगवान पार्श्वनाथ की देव-आकृति">
+              <div class="deity-figure-inner">🐍</div>
+            </div>
+            <span class="deity-num">23वें तीर्थंकर</span>
+            <h3>Bhagwan Parshvanath</h3>
+            <div class="deity-hindi">भगवान पार्श्वनाथ</div>
+            <p>23वें तीर्थंकर, सात फनों वाले सर्प-छत्र के साथ — दैवीय रक्षा का प्रतीक।</p>
+            <p class="deity-flip-hint">↻ कार्ड पलटें</p>
+          </div>
+          <div class="deity-card-back">
+            <div class="deity-back-icon">🐍</div>
+            <h3>Bhagwan Parshvanath</h3>
+            <div class="deity-hindi-back">चतुर्याम धर्म</div>
+            <p>महावीर से 250 वर्ष पूर्व उन्होंने चतुर्याम धर्म — अहिंसा, सत्य, अस्तेय और अपरिग्रह — का प्रचार किया। वाराणसी में जन्मे, पार्श्वनाथ पर्वत पर मोक्ष प्राप्त किया।</p>
+          </div>
         </div>
-        <span class="deity-num">23वें तीर्थंकर</span>
-        <h3>Bhagwan Parshvanath</h3>
-        <div class="deity-hindi">भगवान पार्श्वनाथ</div>
-        <p>23वें तीर्थंकर, पार्श्वनाथ को सात फनों वाले सर्प-छत्र के साथ दर्शाया जाता है — जो दैवीय रक्षा का प्रतीक है। महावीर से 250 वर्ष पूर्व उन्होंने चतुर्याम धर्म — अहिंसा, सत्य, अस्तेय और अपरिग्रह — का प्रचार किया।</p>
       </div>
-      <div class="deity-card fade-in fade-in-delay-3">
-        <div class="deity-figure neminath" role="img" aria-label="भगवान नेमिनाथ की देव-आकृति">
-          <div class="deity-figure-inner">🌿</div>
+
+      <!-- Bhagwan Neminath — 3D flip card -->
+      <div class="deity-card-3d fade-in fade-in-delay-3">
+        <div class="deity-card-inner">
+          <div class="deity-card-front">
+            <div class="deity-figure neminath" role="img" aria-label="भगवान नेमिनाथ की देव-आकृति">
+              <div class="deity-figure-inner">🌿</div>
+            </div>
+            <span class="deity-num">22वें तीर्थंकर</span>
+            <h3>Bhagwan Neminath</h3>
+            <div class="deity-hindi">भगवान नेमिनाथ</div>
+            <p>भगवान कृष्ण के चचेरे भाई, नेमिनाथ ने परम करुणावश विवाह का त्याग किया।</p>
+            <p class="deity-flip-hint">↻ कार्ड पलटें</p>
+          </div>
+          <div class="deity-card-back">
+            <div class="deity-back-icon">🌿</div>
+            <h3>Bhagwan Neminath</h3>
+            <div class="deity-hindi-back">करुणा का अवतार</div>
+            <p>विवाह-भोज के लिए पशुओं के वध का दृश्य देखकर उन्होंने संसार का त्याग किया। गुजरात के गिरनार पर्वत पर मोक्ष प्राप्त किया — एक पूजनीय जैन तीर्थस्थल।</p>
+          </div>
         </div>
-        <span class="deity-num">22वें तीर्थंकर</span>
-        <h3>Bhagwan Neminath</h3>
-        <div class="deity-hindi">भगवान नेमिनाथ</div>
-        <p>भगवान कृष्ण के चचेरे भाई, नेमिनाथ ने विवाह-भोज के लिए पशुओं के वध का दृश्य देखकर परम करुणावश विवाह का त्याग कर दिया। उन्होंने गुजरात के गिरनार पर्वत पर मोक्ष प्राप्त किया, जो एक पूजनीय जैन तीर्थस्थल है।</p>
       </div>
+
     </div>
   </div>
 </section>
@@ -303,7 +382,7 @@
 
     <h3 class="mgmt-section-title">कार्यकारिणी समिति</h3>
     <div class="mgmt-grid">
-      <div class="mgmt-card fade-in">
+      <div class="mgmt-card tilt-card fade-in">
         <div class="mgmt-avatar" aria-hidden="true">S</div>
         <div class="mgmt-role">अध्यक्ष</div>
         <h4>Shri Suresh Kumar Jain</h4>
@@ -327,7 +406,7 @@
         <h4>Smt. Veena Devi Jain</h4>
         <p>सेवा कार्यक्रमों का समन्वय</p>
       </div>
-      <div class="mgmt-card fade-in">
+      <div class="mgmt-card tilt-card fade-in">
         <div class="mgmt-avatar" aria-hidden="true">A</div>
         <div class="mgmt-role">कोषाध्यक्ष</div>
         <h4>Shri Anil Kumar Patni</h4>
@@ -337,7 +416,7 @@
 
     <h3 class="mgmt-section-title">समिति सदस्य</h3>
     <div class="mgmt-grid">
-      <div class="mgmt-card fade-in">
+      <div class="mgmt-card tilt-card fade-in">
         <div class="mgmt-avatar" aria-hidden="true">M</div>
         <div class="mgmt-role">समिति सदस्य</div>
         <h4>Shri Manoj Kumar Jain</h4>
@@ -697,7 +776,7 @@
 
       <!-- Right: tabbed forms -->
       <div class="fade-in fade-in-delay-1">
-        <div style="background:var(--offwhite);border-radius:14px;box-shadow:0 6px 24px var(--shadow);overflow:hidden;">
+        <div class="contact-form-wrap" style="overflow:hidden;">
           <!-- Tab buttons -->
           <div style="display:flex;border-bottom:2px solid var(--beige);">
             <button id="tab-contact" onclick="showTab('contact')"
